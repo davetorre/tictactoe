@@ -121,4 +121,21 @@
     }
 }
 
+- (void)shiftRight
+{
+    NSString *top = self.board[0][2];
+    NSString *mid = self.board[1][2];
+    NSString *bot = self.board[2][2];
+    
+    self.board[0][2] = self.board[0][1];
+    self.board[1][2] = self.board[1][1];
+    self.board[2][2] = self.board[2][1];
+    self.board[0][1] = self.board[0][0];
+    self.board[1][1] = self.board[1][0];
+    self.board[2][1] = self.board[2][0];
+    self.board[0][0] = top;
+    self.board[1][0] = mid;
+    self.board[2][0] = bot;
+}
+
 @end

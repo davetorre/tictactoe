@@ -14,6 +14,7 @@
 @property (strong, nonatomic) TicTacToeGame *game;
 @property (strong, nonatomic) CPUPlayer *cpuPlayer;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *locationButtons;
+@property (weak, nonatomic) IBOutlet UILabel *gameStatusLabel;
 
 @end
 
@@ -48,9 +49,9 @@ static const int TURN = 0; // User goes first.
 
 - (IBAction)touchLocationButton:(UIButton *)sender {
     
-    int index = [self.locationButtons indexOfObject:sender];
+    int index = (int)[self.locationButtons indexOfObject:sender];
     CGPoint location = [self getCGPointForIndex:index];
-    
+
     if ([[self.game playerAtLocation:location] isEqualToString:@" "]) {
         [self.game markLocation:location with:@"X"];
         if (![self.game isOver]) {
@@ -58,12 +59,26 @@ static const int TURN = 0; // User goes first.
         }
         [self updateUI];
     }
+
+}
+
+- (IBAction)touchNewGameButton:(UIButton *)sender
+{
+    self.game = nil;
+    self.gameStatusLabel.text = @" ";
+    [self updateUI];
+}
+
+- (IBAction)touchShiftRightButton:(UIButton *)sender
+{
+    [self.game shiftRight];
+    [self updateUI];
 }
 
 - (void)updateUI
 {
     for (UIButton *locationButton in self.locationButtons) {
-        int index = [self.locationButtons indexOfObject:locationButton];
+        int index = (int)[self.locationButtons indexOfObject:locationButton];
         CGPoint location = [self getCGPointForIndex:index];
         
         NSAttributedString *player = [[NSAttributedString alloc]
@@ -72,9 +87,25 @@ static const int TURN = 0; // User goes first.
     }
     
     if ([self.game isOver]) {
-        NSLog(@"Game over");
+        NSString *statusText;
+        switch (self.game.score) {
+            case 10:
+                statusText = @"Game over. You won!";
+                break;
+            case -10:
+                statusText = @"Game over. You Lost.";
+                break;
+            case 0:
+                statusText = @"Game over. Draw.";
+                break;
+            default:
+                statusText = @" ";
+                break;
+        }
+        self.gameStatusLabel.text = statusText;
     }
 }
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

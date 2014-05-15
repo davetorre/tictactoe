@@ -24,7 +24,6 @@
 
 - (int)minMax:(TicTacToeGame *)game
 {
-
     if ([game isOver]) {
         return game.score;
     }

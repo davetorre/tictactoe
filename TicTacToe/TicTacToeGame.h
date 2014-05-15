@@ -29,4 +29,6 @@
 
 - (void)changeTurns;
 
+- (void)shiftRight;
+
 @end
