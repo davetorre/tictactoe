@@ -12,10 +12,8 @@
 
 @interface TicTacToeViewController()
 @property (strong, nonatomic) TicTacToeGame *game;
-@property (strong, nonatomic) CPUPlayer *cpuPlayer;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *locationButtons;
 @property (weak, nonatomic) IBOutlet UILabel *gameStatusLabel;
-
 @end
 
 @implementation TicTacToeViewController
@@ -32,14 +30,6 @@ static const int TURN = 0; // User goes first.
     return _game;
 }
 
-- (CPUPlayer *)cpuPlayer
-{
-    if (!_cpuPlayer) {
-        _cpuPlayer = [[CPUPlayer alloc] init];
-    }
-    return _cpuPlayer;
-}
-
 - (CGPoint)getCGPointForIndex:(int)index
 {
     int x = index / self.game.numColumns;
@@ -51,15 +41,10 @@ static const int TURN = 0; // User goes first.
     
     int index = (int)[self.locationButtons indexOfObject:sender];
     CGPoint location = [self getCGPointForIndex:index];
-
-    if ([[self.game playerAtLocation:location] isEqualToString:@" "]) {
-        [self.game markLocation:location with:@"X"];
-        if (![self.game isOver]) {
-            [self.cpuPlayer makeMove:self.game];
-        }
+    
+    if ([self.game makeHumanMoveAtLocation:location]) {
         [self updateUI];
     }
-
 }
 
 - (IBAction)touchNewGameButton:(UIButton *)sender

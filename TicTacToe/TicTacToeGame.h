@@ -17,6 +17,8 @@
 
 - (id)initWithRows:(int)rows columns:(int)columns turn:(int)turn;
 
+- (BOOL)makeHumanMoveAtLocation:(CGPoint)location;
+
 - (NSString *)playerAtLocation:(CGPoint)location;
 
 - (void)markLocation:(CGPoint)location with:(NSString *)player;

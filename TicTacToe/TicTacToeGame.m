@@ -7,8 +7,11 @@
 //
 
 #import "TicTacToeGame.h"
+#import "CPUPlayer.h"
+
 @interface TicTacToeGame ()
 @property (strong, nonatomic) NSMutableArray *board;
+@property (strong, nonatomic) CPUPlayer *cpuPlayer;
 @end
 
 @implementation TicTacToeGame
@@ -26,6 +29,14 @@
     return self;
 }
 
+- (CPUPlayer *)cpuPlayer
+{
+    if (!_cpuPlayer) {
+        _cpuPlayer = [[CPUPlayer alloc] init];
+    }
+    return _cpuPlayer;
+}
+
 - (NSMutableArray *)board
 {
     if (!_board) {
@@ -39,6 +50,26 @@
         }
     }
     return _board;
+}
+
+- (BOOL)locationIsOpen:(CGPoint)location
+{
+    return [[self playerAtLocation:location] isEqualToString:@" "];
+}
+
+- (BOOL)makeHumanMoveAtLocation:(CGPoint)location
+{
+    if (![self isOver] && [self locationIsOpen:location]) {
+        [self markLocation:location with:@"X"];
+        if (![self isOver]) {
+            [self changeTurns];
+            [self.cpuPlayer makeMove:self];
+            [self changeTurns];
+        }
+        return TRUE;
+    } else {
+        return FALSE;
+    }
 }
 
 - (NSString *)playerAtLocation:(CGPoint)location
@@ -72,16 +103,42 @@
     return locations;
 }
 
+- (BOOL)hasDiagonals
+{
+    return ((self.numRows == self.numColumns) && (self.numRows % 2 == 1));
+}
+
 - (NSArray *)winningLines
 {
-    return @[@[self.board[0][0], self.board[0][1], self.board[0][2]],
-             @[self.board[1][0], self.board[1][1], self.board[1][2]],
-             @[self.board[2][0], self.board[2][1], self.board[2][2]],
-             @[self.board[0][0], self.board[1][0], self.board[2][0]],
-             @[self.board[0][1], self.board[1][1], self.board[2][1]],
-             @[self.board[0][2], self.board[1][2], self.board[2][2]],
-             @[self.board[0][0], self.board[1][1], self.board[2][2]],
-             @[self.board[0][2], self.board[1][1], self.board[2][0]]];
+    NSMutableArray *winningLines = [[NSMutableArray alloc] init];
+    
+    // winning rows
+    for (int row = 0; row < self.numRows; row++) {
+        [winningLines addObject:self.board[row]];
+    }
+    
+    // winning columns
+    for (int column = 0; column < self.numColumns; column++) {
+        NSMutableArray *winningColumn = [[NSMutableArray alloc] init];
+        for (int row = 0; row < self.numRows; row++) {
+            [winningColumn addObject:self.board[row][column]];
+        }
+        [winningLines addObject:winningColumn];
+    }
+    
+    // winning diagonals
+    if ([self hasDiagonals]) {
+        NSMutableArray *winningDiagonal1 = [[NSMutableArray alloc] init];
+        NSMutableArray *winningDiagonal2 = [[NSMutableArray alloc] init];
+        for (int row = 0; row < self.numRows; row++) {
+            [winningDiagonal1 addObject:self.board[row][row]];
+            [winningDiagonal2 addObject:self.board[row][self.numColumns - 1 - row]];
+        }
+        [winningLines addObject:winningDiagonal1];
+        [winningLines addObject:winningDiagonal2];
+    }
+    
+    return winningLines;
 }
 
 - (BOOL)isOver
@@ -123,19 +180,13 @@
 
 - (void)shiftRight
 {
-    NSString *top = self.board[0][2];
-    NSString *mid = self.board[1][2];
-    NSString *bot = self.board[2][2];
-    
-    self.board[0][2] = self.board[0][1];
-    self.board[1][2] = self.board[1][1];
-    self.board[2][2] = self.board[2][1];
-    self.board[0][1] = self.board[0][0];
-    self.board[1][1] = self.board[1][0];
-    self.board[2][1] = self.board[2][0];
-    self.board[0][0] = top;
-    self.board[1][0] = mid;
-    self.board[2][0] = bot;
+    for (int row = 0; row < self.numRows; row++) {
+        NSString *lastObject = self.board[row][self.numColumns - 1];
+        for (int column = self.numColumns - 1; column > 0; column--) {
+            self.board[row][column] = self.board[row][column - 1];
+        }
+        self.board[row][0] = lastObject;
+    }
 }
 
 @end

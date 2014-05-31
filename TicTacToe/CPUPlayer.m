@@ -16,10 +16,8 @@
 
 - (void)makeMove:(TicTacToeGame *)game
 {
-    [game changeTurns];
     [self minMax:game];
     [game markLocation:self.choice with:@"O"];
-    [game changeTurns];
 }
 
 - (int)minMax:(TicTacToeGame *)game
@@ -59,14 +57,14 @@
         for (NSNumber *num in scores) {
             if ([num integerValue] > [max integerValue]) max = num;
         }
-        index = [scores indexOfObject:max];
+        index = (int)[scores indexOfObject:max];
     } else {
         // find the minimum score's index
         NSNumber *min = scores[0];
         for (NSNumber *num in scores) {
             if ([num integerValue] < [min integerValue]) min = num;
         }
-        index = [scores indexOfObject:min];
+        index = (int)[scores indexOfObject:min];
     }
     
     // find and save the min/max score's corresponding choice
@@ -75,7 +73,7 @@
     self.choice = choice;
     
     // return the min/max score
-    return [scores[index] integerValue];
+    return (int)[scores[index] integerValue];
 }
 
 @end
