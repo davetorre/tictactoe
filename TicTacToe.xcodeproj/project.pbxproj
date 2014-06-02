@@ -22,6 +22,9 @@
 		C854735319219971009A2103 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C854735119219971009A2103 /* InfoPlist.strings */; };
 		C854735519219971009A2103 /* TicTacToeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C854735419219971009A2103 /* TicTacToeTests.m */; };
 		C854736419219B0B009A2103 /* CPUPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C854736319219B0B009A2103 /* CPUPlayer.m */; };
+		C858DF4D193BEE7D003EE534 /* GameMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = C858DF4C193BEE7D003EE534 /* GameMaster.m */; };
+		C858DF50193BF337003EE534 /* HumanPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C858DF4F193BF337003EE534 /* HumanPlayer.m */; };
+		C858DF53193BFBD8003EE534 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = C858DF52193BFBD8003EE534 /* Constants.m */; };
 		C87DB16519219B7600B486F7 /* TicTacToeGame.m in Sources */ = {isa = PBXBuildFile; fileRef = C87DB16419219B7600B486F7 /* TicTacToeGame.m */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +60,12 @@
 		C854735419219971009A2103 /* TicTacToeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicTacToeTests.m; sourceTree = "<group>"; };
 		C854736219219B0B009A2103 /* CPUPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPUPlayer.h; sourceTree = "<group>"; };
 		C854736319219B0B009A2103 /* CPUPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPUPlayer.m; sourceTree = "<group>"; };
+		C858DF4B193BEE7D003EE534 /* GameMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMaster.h; sourceTree = "<group>"; };
+		C858DF4C193BEE7D003EE534 /* GameMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMaster.m; sourceTree = "<group>"; };
+		C858DF4E193BF337003EE534 /* HumanPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HumanPlayer.h; sourceTree = "<group>"; };
+		C858DF4F193BF337003EE534 /* HumanPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HumanPlayer.m; sourceTree = "<group>"; };
+		C858DF51193BFBD8003EE534 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		C858DF52193BFBD8003EE534 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		C87DB16319219B7600B486F7 /* TicTacToeGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicTacToeGame.h; sourceTree = "<group>"; };
 		C87DB16419219B7600B486F7 /* TicTacToeGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicTacToeGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,10 +130,16 @@
 				C854733B19219970009A2103 /* Main.storyboard */,
 				C854733E19219970009A2103 /* TicTacToeViewController.h */,
 				C854733F19219970009A2103 /* TicTacToeViewController.m */,
-				C854736219219B0B009A2103 /* CPUPlayer.h */,
-				C854736319219B0B009A2103 /* CPUPlayer.m */,
+				C858DF4B193BEE7D003EE534 /* GameMaster.h */,
+				C858DF4C193BEE7D003EE534 /* GameMaster.m */,
 				C87DB16319219B7600B486F7 /* TicTacToeGame.h */,
 				C87DB16419219B7600B486F7 /* TicTacToeGame.m */,
+				C854736219219B0B009A2103 /* CPUPlayer.h */,
+				C854736319219B0B009A2103 /* CPUPlayer.m */,
+				C858DF4E193BF337003EE534 /* HumanPlayer.h */,
+				C858DF4F193BF337003EE534 /* HumanPlayer.m */,
+				C858DF51193BFBD8003EE534 /* Constants.h */,
+				C858DF52193BFBD8003EE534 /* Constants.m */,
 				C854734119219970009A2103 /* Images.xcassets */,
 				C854733019219970009A2103 /* Supporting Files */,
 			);
@@ -263,8 +278,11 @@
 				C854733619219970009A2103 /* main.m in Sources */,
 				C854736419219B0B009A2103 /* CPUPlayer.m in Sources */,
 				C87DB16519219B7600B486F7 /* TicTacToeGame.m in Sources */,
+				C858DF53193BFBD8003EE534 /* Constants.m in Sources */,
 				C854733A19219970009A2103 /* TicTacToeAppDelegate.m in Sources */,
 				C854734019219970009A2103 /* TicTacToeViewController.m in Sources */,
+				C858DF4D193BEE7D003EE534 /* GameMaster.m in Sources */,
+				C858DF50193BF337003EE534 /* HumanPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

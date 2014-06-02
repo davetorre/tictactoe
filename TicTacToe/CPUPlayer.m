@@ -7,17 +7,39 @@
 //
 
 #import "CPUPlayer.h"
+#import "Constants.h"
 
 @interface CPUPlayer ()
 @property (nonatomic) CGPoint choice;
+@property (nonatomic, strong) NSString *player;
 @end
 
 @implementation CPUPlayer
 
-- (void)makeMove:(TicTacToeGame *)game
+- (id)initAsPlayer:(NSString *)player
+{
+    self = [super init];
+    
+    if (self) {
+        self.player = player;
+    }
+    
+    return self;
+}
+
+- (void)switchPlayer
+{
+    if ([self.player isEqualToString:TTT_O]) {
+        self.player = TTT_X;
+    } else {
+        self.player = TTT_O;
+    }
+}
+
+- (void)makeMoveInGame:(TicTacToeGame *)game
 {
     [self minMax:game];
-    [game markLocation:self.choice with:@"O"];
+    [game markLocation:self.choice with:self.player];
 }
 
 - (int)minMax:(TicTacToeGame *)game
@@ -34,24 +56,20 @@
         CGPoint move;
         [moveObject getValue:&move];
         
-        if (game.turn == 0) {
-            [game markLocation:move with:@"X"];
-        } else {
-            [game markLocation:move with:@"O"];
-        }
+        [game markLocation:move with:self.player];
         
-        [game changeTurns];
+        [self switchPlayer];
 
         [moves addObject:moveObject];
         [scores addObject:[NSNumber numberWithInt:[self minMax:game]]];
         
         [game eraseLocation:move];
-        [game changeTurns];
+        [self switchPlayer];
     }
     
     int index;
     
-    if (game.turn == 0) {
+    if ([self.player isEqualToString:TTT_X]) {
         // find the maximum score's index
         NSNumber *max = scores[0];
         for (NSNumber *num in scores) {

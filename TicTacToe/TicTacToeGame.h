@@ -13,11 +13,8 @@
 @property (nonatomic) int numRows;
 @property (nonatomic) int numColumns;
 @property (nonatomic) int score;
-@property (nonatomic) int turn; // 0 is 'X', 1 is 'O'
 
-- (id)initWithRows:(int)rows columns:(int)columns turn:(int)turn;
-
-- (BOOL)makeHumanMoveAtLocation:(CGPoint)location;
+- (id)initWithRows:(int)rows columns:(int)columns;
 
 - (NSString *)playerAtLocation:(CGPoint)location;
 
@@ -28,8 +25,6 @@
 - (NSMutableArray *)possibleMoves;
 
 - (BOOL)isOver;
-
-- (void)changeTurns;
 
 - (void)shiftRight;
 

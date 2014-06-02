@@ -11,6 +11,8 @@
 
 @interface CPUPlayer : NSObject
 
-- (void)makeMove:(TicTacToeGame *)game;
+- (id)initAsPlayer:(NSString *)player;
+
+- (void)makeMoveInGame:(TicTacToeGame *)game;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  HumanPlayer.h
+//  GameMaster.h
 //  TicTacToe
 //
 //  Created by David Torre on 6/1/14.
@@ -9,10 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "TicTacToeGame.h"
 
-@interface HumanPlayer : NSObject
+@interface GameMaster : NSObject
 
-- (id)initAsPlayer:(NSString *)player;
-
-- (void)makeMoveInGame:(TicTacToeGame *)game atLocation:(CGPoint)location;
+- (BOOL)requestMoveInGame:(TicTacToeGame *)game atLocation:(CGPoint)location;
 
 @end

@@ -8,10 +8,11 @@
 
 #import "TicTacToeViewController.h"
 #import "TicTacToeGame.h"
-#import "CPUPlayer.h"
+#import "GameMaster.h"
 
 @interface TicTacToeViewController()
 @property (strong, nonatomic) TicTacToeGame *game;
+@property (strong, nonatomic) GameMaster *gameMaster;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *locationButtons;
 @property (weak, nonatomic) IBOutlet UILabel *gameStatusLabel;
 @end
@@ -20,29 +21,35 @@
 
 static const int NUM_ROWS = 3;
 static const int NUM_COLUMNS = 3;
-static const int TURN = 0; // User goes first.
 
 - (TicTacToeGame *)game
 {
     if (!_game) {
-        _game = [[TicTacToeGame alloc] initWithRows:NUM_ROWS columns:NUM_COLUMNS turn:TURN];
+        _game = [[TicTacToeGame alloc] initWithRows:NUM_ROWS columns:NUM_COLUMNS];
     }
     return _game;
 }
 
+- (GameMaster *)gameMaster
+{
+    if (!_gameMaster) {
+        _gameMaster = [[GameMaster alloc] init];
+    }
+    return _gameMaster;
+}
+
 - (CGPoint)getCGPointForIndex:(int)index
 {
-    int x = index / self.game.numColumns;
-    int y = index % self.game.numColumns;
+    int x = index / NUM_COLUMNS;
+    int y = index % NUM_COLUMNS;
     return CGPointMake(x, y);
 }
 
-- (IBAction)touchLocationButton:(UIButton *)sender {
-    
+- (IBAction)touchLocationButton:(UIButton *)sender
+{
     int index = (int)[self.locationButtons indexOfObject:sender];
     CGPoint location = [self getCGPointForIndex:index];
-    
-    if ([self.game makeHumanMoveAtLocation:location]) {
+    if ([self.gameMaster requestMoveInGame:self.game atLocation:location]) {
         [self updateUI];
     }
 }
@@ -56,8 +63,10 @@ static const int TURN = 0; // User goes first.
 
 - (IBAction)touchShiftRightButton:(UIButton *)sender
 {
-    [self.game shiftRight];
-    [self updateUI];
+    if (![self.game isOver]) {
+        [self.game shiftRight];
+        [self updateUI];
+    }
 }
 
 - (void)updateUI

@@ -7,34 +7,24 @@
 //
 
 #import "TicTacToeGame.h"
-#import "CPUPlayer.h"
+#import "Constants.h"
 
 @interface TicTacToeGame ()
 @property (strong, nonatomic) NSMutableArray *board;
-@property (strong, nonatomic) CPUPlayer *cpuPlayer;
 @end
 
 @implementation TicTacToeGame
 
-- (id)initWithRows:(int)rows columns:(int)columns turn:(int)turn
+- (id)initWithRows:(int)rows columns:(int)columns
 {
     self = [super init];
     
     if (self) {
         self.numRows = rows;
         self.numColumns = columns;
-        self.turn = turn;
     }
     
     return self;
-}
-
-- (CPUPlayer *)cpuPlayer
-{
-    if (!_cpuPlayer) {
-        _cpuPlayer = [[CPUPlayer alloc] init];
-    }
-    return _cpuPlayer;
 }
 
 - (NSMutableArray *)board
@@ -45,31 +35,11 @@
         for (int x = 0; x < self.numRows; x++) {
             _board[x] = [[NSMutableArray alloc] initWithCapacity:self.numColumns];
             for (int y = 0; y < self.numColumns; y++) {
-                _board[x][y] = @" ";
+                _board[x][y] = TTT_EMPTY;
             }
         }
     }
     return _board;
-}
-
-- (BOOL)locationIsOpen:(CGPoint)location
-{
-    return [[self playerAtLocation:location] isEqualToString:@" "];
-}
-
-- (BOOL)makeHumanMoveAtLocation:(CGPoint)location
-{
-    if (![self isOver] && [self locationIsOpen:location]) {
-        [self markLocation:location with:@"X"];
-        if (![self isOver]) {
-            [self changeTurns];
-            [self.cpuPlayer makeMove:self];
-            [self changeTurns];
-        }
-        return TRUE;
-    } else {
-        return FALSE;
-    }
 }
 
 - (NSString *)playerAtLocation:(CGPoint)location
@@ -84,7 +54,7 @@
 
 - (void)eraseLocation:(CGPoint)location
 {
-    self.board[(int)location.x][(int)location.y] = @" ";
+    self.board[(int)location.x][(int)location.y] = TTT_EMPTY;
 }
 
 - (NSMutableArray *)possibleMoves
@@ -92,7 +62,7 @@
     NSMutableArray *locations = [[NSMutableArray alloc] init];
     for (int x = 0; x < 3; x++) {
         for (int y = 0; y < 3; y++) {
-            if ([self.board[x][y] isEqualToString:@" "]) {
+            if ([self.board[x][y] isEqualToString:TTT_EMPTY]) {
                 CGPoint location = CGPointMake(x, y);
                 NSValue *locationObject = [NSValue value:&location
                                              withObjCType:@encode(CGPoint)];
@@ -147,15 +117,15 @@
         int xCount = 0;
         int oCount = 0;
         
-        for (int i = 0; i < 3; i++) {
-            if ([line[i] isEqualToString:@"X"]) xCount++;
-            if ([line[i] isEqualToString:@"O"]) oCount++;
+        for (int i = 0; i < [line count]; i++) {
+            if ([line[i] isEqualToString:TTT_X]) xCount++;
+            if ([line[i] isEqualToString:TTT_O]) oCount++;
         }
-        if (xCount == 3) {
+        if (xCount == [line count]) {
             self.score = 10;
             return TRUE;
         }
-        if (oCount == 3) {
+        if (oCount == [line count]) {
             self.score = -10;
             return TRUE;
         }
@@ -166,15 +136,6 @@
         return TRUE;
     } else {
         return FALSE;
-    }
-}
-
-- (void)changeTurns
-{
-    if (self.turn == 0) {
-        self.turn = 1;
-    } else {
-        self.turn = 0;
     }
 }
 
