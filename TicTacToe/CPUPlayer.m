@@ -57,7 +57,6 @@
         [moveObject getValue:&move];
         
         [game markLocation:move with:self.player];
-        
         [self switchPlayer];
 
         [moves addObject:moveObject];

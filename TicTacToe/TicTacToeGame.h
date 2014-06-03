@@ -13,6 +13,7 @@
 @property (nonatomic) int numRows;
 @property (nonatomic) int numColumns;
 @property (nonatomic) int score;
+@property (strong, nonatomic) NSMutableArray *board;
 
 - (id)initWithRows:(int)rows columns:(int)columns;
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C84E1A77193D62E900660AAC /* CPUPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C84E1A76193D62E900660AAC /* CPUPlayerTests.m */; };
+		C84E1A79193D635200660AAC /* TicTacToeGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C84E1A78193D635200660AAC /* TicTacToeGameTests.m */; };
 		C854732A19219970009A2103 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C854732919219970009A2103 /* Foundation.framework */; };
 		C854732C19219970009A2103 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C854732B19219970009A2103 /* CoreGraphics.framework */; };
 		C854732E19219970009A2103 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C854732D19219970009A2103 /* UIKit.framework */; };
@@ -25,6 +27,7 @@
 		C858DF4D193BEE7D003EE534 /* GameMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = C858DF4C193BEE7D003EE534 /* GameMaster.m */; };
 		C858DF50193BF337003EE534 /* HumanPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C858DF4F193BF337003EE534 /* HumanPlayer.m */; };
 		C858DF53193BFBD8003EE534 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = C858DF52193BFBD8003EE534 /* Constants.m */; };
+		C87665AD193C485E000937F5 /* GameSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = C87665AC193C485E000937F5 /* GameSpace.m */; };
 		C87DB16519219B7600B486F7 /* TicTacToeGame.m in Sources */ = {isa = PBXBuildFile; fileRef = C87DB16419219B7600B486F7 /* TicTacToeGame.m */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C84E1A76193D62E900660AAC /* CPUPlayerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPUPlayerTests.m; sourceTree = "<group>"; };
+		C84E1A78193D635200660AAC /* TicTacToeGameTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicTacToeGameTests.m; sourceTree = "<group>"; };
 		C854732619219970009A2103 /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C854732919219970009A2103 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C854732B19219970009A2103 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -66,6 +71,8 @@
 		C858DF4F193BF337003EE534 /* HumanPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HumanPlayer.m; sourceTree = "<group>"; };
 		C858DF51193BFBD8003EE534 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		C858DF52193BFBD8003EE534 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		C87665AB193C485E000937F5 /* GameSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSpace.h; sourceTree = "<group>"; };
+		C87665AC193C485E000937F5 /* GameSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSpace.m; sourceTree = "<group>"; };
 		C87DB16319219B7600B486F7 /* TicTacToeGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicTacToeGame.h; sourceTree = "<group>"; };
 		C87DB16419219B7600B486F7 /* TicTacToeGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicTacToeGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +141,8 @@
 				C858DF4C193BEE7D003EE534 /* GameMaster.m */,
 				C87DB16319219B7600B486F7 /* TicTacToeGame.h */,
 				C87DB16419219B7600B486F7 /* TicTacToeGame.m */,
+				C87665AB193C485E000937F5 /* GameSpace.h */,
+				C87665AC193C485E000937F5 /* GameSpace.m */,
 				C854736219219B0B009A2103 /* CPUPlayer.h */,
 				C854736319219B0B009A2103 /* CPUPlayer.m */,
 				C858DF4E193BF337003EE534 /* HumanPlayer.h */,
@@ -163,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				C854735419219971009A2103 /* TicTacToeTests.m */,
+				C84E1A76193D62E900660AAC /* CPUPlayerTests.m */,
+				C84E1A78193D635200660AAC /* TicTacToeGameTests.m */,
 				C854734F19219971009A2103 /* Supporting Files */,
 			);
 			path = TicTacToeTests;
@@ -276,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C854733619219970009A2103 /* main.m in Sources */,
+				C87665AD193C485E000937F5 /* GameSpace.m in Sources */,
 				C854736419219B0B009A2103 /* CPUPlayer.m in Sources */,
 				C87DB16519219B7600B486F7 /* TicTacToeGame.m in Sources */,
 				C858DF53193BFBD8003EE534 /* Constants.m in Sources */,
@@ -291,6 +303,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C854735519219971009A2103 /* TicTacToeTests.m in Sources */,
+				C84E1A79193D635200660AAC /* TicTacToeGameTests.m in Sources */,
+				C84E1A77193D62E900660AAC /* CPUPlayerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

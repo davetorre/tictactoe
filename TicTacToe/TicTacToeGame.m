@@ -9,10 +9,6 @@
 #import "TicTacToeGame.h"
 #import "Constants.h"
 
-@interface TicTacToeGame ()
-@property (strong, nonatomic) NSMutableArray *board;
-@end
-
 @implementation TicTacToeGame
 
 - (id)initWithRows:(int)rows columns:(int)columns
@@ -60,10 +56,10 @@
 - (NSMutableArray *)possibleMoves
 {
     NSMutableArray *locations = [[NSMutableArray alloc] init];
-    for (int x = 0; x < 3; x++) {
-        for (int y = 0; y < 3; y++) {
-            if ([self.board[x][y] isEqualToString:TTT_EMPTY]) {
-                CGPoint location = CGPointMake(x, y);
+    for (int row = 0; row < self.numRows; row++) {
+        for (int column = 0; column < self.numColumns; column++) {
+            if ([self.board[row][column] isEqualToString:TTT_EMPTY]) {
+                CGPoint location = CGPointMake(row, column);
                 NSValue *locationObject = [NSValue value:&location
                                              withObjCType:@encode(CGPoint)];
                 [locations addObject:locationObject];
@@ -121,10 +117,12 @@
             if ([line[i] isEqualToString:TTT_X]) xCount++;
             if ([line[i] isEqualToString:TTT_O]) oCount++;
         }
+        
         if (xCount == [line count]) {
             self.score = 10;
             return TRUE;
         }
+        
         if (oCount == [line count]) {
             self.score = -10;
             return TRUE;
