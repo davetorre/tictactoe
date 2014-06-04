@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 David Torre. All rights reserved.
 //
 
-#import "HumanPlayer.h"
+#import "TTTHumanPlayer.h"
 
-@interface HumanPlayer ()
+@interface TTTHumanPlayer ()
 @property (nonatomic, strong) NSString *player;
 @end
 
-@implementation HumanPlayer
+@implementation TTTHumanPlayer
 
 - (id)initAsPlayer:(NSString *)player
 {
@@ -25,7 +25,7 @@
     return self;
 }
 
-- (void)makeMoveInGame:(TicTacToeGame *)game atLocation:(CGPoint)location
+- (void)makeMoveInGame:(TTTGame *)game atLocation:(CGPoint)location
 {
     [game markLocation:location with:self.player];
 }

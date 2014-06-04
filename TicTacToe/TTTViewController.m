@@ -6,34 +6,34 @@
 //  Copyright (c) 2014 David Torre. All rights reserved.
 //
 
-#import "TicTacToeViewController.h"
-#import "TicTacToeGame.h"
-#import "GameMaster.h"
+#import "TTTViewController.h"
+#import "TTTGame.h"
+#import "TTTGameMaster.h"
 
-@interface TicTacToeViewController()
-@property (strong, nonatomic) TicTacToeGame *game;
-@property (strong, nonatomic) GameMaster *gameMaster;
+@interface TTTViewController()
+@property (strong, nonatomic) TTTGame *game;
+@property (strong, nonatomic) TTTGameMaster *gameMaster;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *locationButtons;
 @property (weak, nonatomic) IBOutlet UILabel *gameStatusLabel;
 @end
 
-@implementation TicTacToeViewController
+@implementation TTTViewController
 
 static const int NUM_ROWS = 3;
 static const int NUM_COLUMNS = 3;
 
-- (TicTacToeGame *)game
+- (TTTGame *)game
 {
     if (!_game) {
-        _game = [[TicTacToeGame alloc] initWithRows:NUM_ROWS columns:NUM_COLUMNS];
+        _game = [[TTTGame alloc] initWithRows:NUM_ROWS columns:NUM_COLUMNS];
     }
     return _game;
 }
 
-- (GameMaster *)gameMaster
+- (TTTGameMaster *)gameMaster
 {
     if (!_gameMaster) {
-        _gameMaster = [[GameMaster alloc] init];
+        _gameMaster = [[TTTGameMaster alloc] init];
     }
     return _gameMaster;
 }

@@ -6,35 +6,35 @@
 //  Copyright (c) 2014 David Torre. All rights reserved.
 //
 
-#import "GameMaster.h"
-#import "CPUPlayer.h"
-#import "HumanPlayer.h"
-#import "Constants.h"
+#import "TTTGameMaster.h"
+#import "TTTCPUPlayer.h"
+#import "TTTHumanPlayer.h"
+#import "TTTConstants.h"
 
-@interface GameMaster ()
-@property (strong, nonatomic) HumanPlayer *humanPlayer;
-@property (strong, nonatomic) CPUPlayer *cpuPlayer;
+@interface TTTGameMaster ()
+@property (strong, nonatomic) TTTHumanPlayer *humanPlayer;
+@property (strong, nonatomic) TTTCPUPlayer *cpuPlayer;
 @end
 
-@implementation GameMaster
+@implementation TTTGameMaster
 
-- (HumanPlayer *)humanPlayer
+- (TTTHumanPlayer *)humanPlayer
 {
     if (!_humanPlayer) {
-        _humanPlayer = [[HumanPlayer alloc] initAsPlayer:TTT_X];
+        _humanPlayer = [[TTTHumanPlayer alloc] initAsPlayer:TTT_X];
     }
     return _humanPlayer;
 }
 
-- (CPUPlayer *)cpuPlayer
+- (TTTCPUPlayer *)cpuPlayer
 {
     if (!_cpuPlayer) {
-        _cpuPlayer = [[CPUPlayer alloc] initAsPlayer:TTT_O];
+        _cpuPlayer = [[TTTCPUPlayer alloc] initAsPlayer:TTT_O];
     }
     return _cpuPlayer;
 }
 
-- (BOOL)requestMoveInGame:(TicTacToeGame *)game atLocation:(CGPoint)location
+- (BOOL)requestMoveInGame:(TTTGame *)game atLocation:(CGPoint)location
 {
     if (![game isOver] && [[game playerAtLocation:location] isEqualToString:TTT_EMPTY]) {
         

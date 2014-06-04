@@ -7,9 +7,9 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "TicTacToeGame.h"
-#import "CPUPlayer.h"
-#import "Constants.h"
+#import "TTTGame.h"
+#import "TTTCPUPlayer.h"
+#import "TTTConstants.h"
 
 @interface CPUPlayerTests : XCTestCase
 
@@ -29,11 +29,10 @@
     [super tearDown];
 }
 
-- (void)testTwoCPUPlayersShouldTie
+- (TTTGame *)playTwoCPUPlayerGame:(TTTGame *)game
 {
-    TicTacToeGame *game = [[TicTacToeGame alloc] initWithRows:3 columns:3];
-    CPUPlayer *player1 = [[CPUPlayer alloc] initAsPlayer:TTT_X];
-    CPUPlayer *player2 = [[CPUPlayer alloc] initAsPlayer:TTT_O];
+    TTTCPUPlayer *player1 = [[TTTCPUPlayer alloc] initAsPlayer:TTT_X];
+    TTTCPUPlayer *player2 = [[TTTCPUPlayer alloc] initAsPlayer:TTT_O];
     
     int turn = 1;
     
@@ -46,6 +45,15 @@
             turn = 1;
         }
     }
+    
+    return game;
+}
+
+- (void)testTwoCPUPlayersShouldTie
+{
+    TTTGame *game = [[TTTGame alloc] initWithRows:3 columns:3];
+    
+    game = [self playTwoCPUPlayerGame:game];
     
     XCTAssertEqual(game.score, 0, @"Two CPUPlayers should tie.");
     XCTAssertEqual([[game possibleMoves] count], 0, @"Board should be full.");
@@ -53,9 +61,7 @@
 
 - (void)testIfCPUPlayer2PlaysEdgeCPUPlayer1ShouldWin
 {
-    TicTacToeGame *game = [[TicTacToeGame alloc] initWithRows:3 columns:3];
-    CPUPlayer *player1 = [[CPUPlayer alloc] initAsPlayer:TTT_X];
-    CPUPlayer *player2 = [[CPUPlayer alloc] initAsPlayer:TTT_O];
+    TTTGame *game = [[TTTGame alloc] initWithRows:3 columns:3];
     
     CGPoint topLeftCorner = CGPointMake(0, 0);
     CGPoint leftEdge = CGPointMake(1, 0);
@@ -63,17 +69,7 @@
     [game markLocation:topLeftCorner with:TTT_X];
     [game markLocation:leftEdge with:TTT_O];
     
-    int turn = 1;
-    
-    while (![game isOver]) {
-        if (turn == 1) {
-            [player1 makeMoveInGame:game];
-            turn = 2;
-        } else {
-            [player2 makeMoveInGame:game];
-            turn = 1;
-        }
-    }
+    game = [self playTwoCPUPlayerGame:game];
     
     XCTAssertEqual(game.score, 10, @"CPUPlayer1 should win.");
 }

@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 David Torre. All rights reserved.
 //
 
-#import "CPUPlayer.h"
-#import "Constants.h"
+#import "TTTCPUPlayer.h"
+#import "TTTConstants.h"
 
-@interface CPUPlayer ()
+@interface TTTCPUPlayer ()
 @property (nonatomic) CGPoint choice;
 @property (nonatomic, strong) NSString *player;
 @end
 
-@implementation CPUPlayer
+@implementation TTTCPUPlayer
 
 - (id)initAsPlayer:(NSString *)player
 {
@@ -36,13 +36,13 @@
     }
 }
 
-- (void)makeMoveInGame:(TicTacToeGame *)game
+- (void)makeMoveInGame:(TTTGame *)game
 {
     [self minMax:game];
     [game markLocation:self.choice with:self.player];
 }
 
-- (int)minMax:(TicTacToeGame *)game
+- (int)minMax:(TTTGame *)game
 {
     if ([game isOver]) {
         return game.score;

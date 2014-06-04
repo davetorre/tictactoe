@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Constants : NSObject
+@interface TTTConstants : NSObject
 
 #define TTT_X @"X"
 #define TTT_O @"O"

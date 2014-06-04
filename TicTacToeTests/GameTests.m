@@ -7,20 +7,20 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "TicTacToeGame.h"
-#import "Constants.h"
+#import "TTTGame.h"
+#import "TTTConstants.h"
 
-@interface TicTacToeGameTests : XCTestCase
-@property (strong, nonatomic) TicTacToeGame *game;
+@interface GameTests : XCTestCase
+@property (strong, nonatomic) TTTGame *game;
 @end
 
-@implementation TicTacToeGameTests
+@implementation GameTests
 
 - (void)setUp
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    self.game = [[TicTacToeGame alloc] initWithRows:3 columns:3];
+    self.game = [[TTTGame alloc] initWithRows:3 columns:3];
 }
 
 - (void)tearDown
@@ -29,7 +29,7 @@
     [super tearDown];
 }
 
-- (void)fillGame:(TicTacToeGame *)game withMoves:(NSArray *)moves
+- (void)fillGame:(TTTGame *)game withMoves:(NSArray *)moves
 {
     int i = 0;
     
@@ -47,6 +47,8 @@
                        TTT_X, TTT_O, TTT_O,
                        TTT_O, TTT_X, TTT_EMPTY];
     
+    CGPoint emptySpace = CGPointMake(2, 2);
+    
     [self fillGame:self.game withMoves:moves];
 
     NSArray *possibleMoves = [self.game possibleMoves];
@@ -55,8 +57,8 @@
     NSValue *moveObject = possibleMoves[0];
     CGPoint move;
     [moveObject getValue:&move];
-    XCTAssertTrue(self.game.board[(int)move.x][(int)move.y] == self.game.board[2][2],
-                                                    @"Possible move should be correct.");
+    XCTAssertTrue([self.game playerAtLocation:move] == [self.game playerAtLocation:emptySpace],
+                  @"Possible move should be correct.");
 }
 
 - (void)testGameIsOverDraw

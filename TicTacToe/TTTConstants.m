@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 David Torre. All rights reserved.
 //
 
-#import "Constants.h"
+#import "TTTConstants.h"
 
-@implementation Constants
+@implementation TTTConstants
 
 @end

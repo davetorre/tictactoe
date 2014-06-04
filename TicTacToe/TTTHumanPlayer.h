@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TicTacToeGame.h"
+#import "TTTGame.h"
 
-@interface HumanPlayer : NSObject
+@interface TTTHumanPlayer : NSObject
 
 - (id)initAsPlayer:(NSString *)player;
 
-- (void)makeMoveInGame:(TicTacToeGame *)game atLocation:(CGPoint)location;
+- (void)makeMoveInGame:(TTTGame *)game atLocation:(CGPoint)location;
 
 @end

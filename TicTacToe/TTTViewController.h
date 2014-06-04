@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TicTacToeViewController : UIViewController
+@interface TTTViewController : UIViewController
 
 @end

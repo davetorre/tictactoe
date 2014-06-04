@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C84E1A77193D62E900660AAC /* CPUPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C84E1A76193D62E900660AAC /* CPUPlayerTests.m */; };
-		C84E1A79193D635200660AAC /* TicTacToeGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C84E1A78193D635200660AAC /* TicTacToeGameTests.m */; };
+		C84E1A79193D635200660AAC /* GameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C84E1A78193D635200660AAC /* GameTests.m */; };
 		C854732A19219970009A2103 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C854732919219970009A2103 /* Foundation.framework */; };
 		C854732C19219970009A2103 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C854732B19219970009A2103 /* CoreGraphics.framework */; };
 		C854732E19219970009A2103 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C854732D19219970009A2103 /* UIKit.framework */; };
@@ -16,17 +16,17 @@
 		C854733619219970009A2103 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C854733519219970009A2103 /* main.m */; };
 		C854733A19219970009A2103 /* TicTacToeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C854733919219970009A2103 /* TicTacToeAppDelegate.m */; };
 		C854733D19219970009A2103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C854733B19219970009A2103 /* Main.storyboard */; };
-		C854734019219970009A2103 /* TicTacToeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C854733F19219970009A2103 /* TicTacToeViewController.m */; };
+		C854734019219970009A2103 /* TTTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C854733F19219970009A2103 /* TTTViewController.m */; };
 		C854734219219970009A2103 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C854734119219970009A2103 /* Images.xcassets */; };
 		C854734919219971009A2103 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C854734819219971009A2103 /* XCTest.framework */; };
 		C854734A19219971009A2103 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C854732919219970009A2103 /* Foundation.framework */; };
 		C854734B19219971009A2103 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C854732D19219970009A2103 /* UIKit.framework */; };
 		C854735319219971009A2103 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C854735119219971009A2103 /* InfoPlist.strings */; };
-		C854736419219B0B009A2103 /* CPUPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C854736319219B0B009A2103 /* CPUPlayer.m */; };
-		C858DF4D193BEE7D003EE534 /* GameMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = C858DF4C193BEE7D003EE534 /* GameMaster.m */; };
-		C858DF50193BF337003EE534 /* HumanPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C858DF4F193BF337003EE534 /* HumanPlayer.m */; };
-		C858DF53193BFBD8003EE534 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = C858DF52193BFBD8003EE534 /* Constants.m */; };
-		C87DB16519219B7600B486F7 /* TicTacToeGame.m in Sources */ = {isa = PBXBuildFile; fileRef = C87DB16419219B7600B486F7 /* TicTacToeGame.m */; };
+		C854736419219B0B009A2103 /* TTTCPUPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C854736319219B0B009A2103 /* TTTCPUPlayer.m */; };
+		C858DF4D193BEE7D003EE534 /* TTTGameMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = C858DF4C193BEE7D003EE534 /* TTTGameMaster.m */; };
+		C858DF50193BF337003EE534 /* TTTHumanPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C858DF4F193BF337003EE534 /* TTTHumanPlayer.m */; };
+		C858DF53193BFBD8003EE534 /* TTTConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C858DF52193BFBD8003EE534 /* TTTConstants.m */; };
+		C87DB16519219B7600B486F7 /* TTTGame.m in Sources */ = {isa = PBXBuildFile; fileRef = C87DB16419219B7600B486F7 /* TTTGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,7 @@
 
 /* Begin PBXFileReference section */
 		C84E1A76193D62E900660AAC /* CPUPlayerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPUPlayerTests.m; sourceTree = "<group>"; };
-		C84E1A78193D635200660AAC /* TicTacToeGameTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicTacToeGameTests.m; sourceTree = "<group>"; };
+		C84E1A78193D635200660AAC /* GameTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTests.m; sourceTree = "<group>"; };
 		C854732619219970009A2103 /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C854732919219970009A2103 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C854732B19219970009A2103 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,23 +53,23 @@
 		C854733819219970009A2103 /* TicTacToeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicTacToeAppDelegate.h; sourceTree = "<group>"; };
 		C854733919219970009A2103 /* TicTacToeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicTacToeAppDelegate.m; sourceTree = "<group>"; };
 		C854733C19219970009A2103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C854733E19219970009A2103 /* TicTacToeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicTacToeViewController.h; sourceTree = "<group>"; };
-		C854733F19219970009A2103 /* TicTacToeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicTacToeViewController.m; sourceTree = "<group>"; };
+		C854733E19219970009A2103 /* TTTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTTViewController.h; sourceTree = "<group>"; };
+		C854733F19219970009A2103 /* TTTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTTViewController.m; sourceTree = "<group>"; };
 		C854734119219970009A2103 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C854734719219971009A2103 /* TicTacToeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicTacToeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C854734819219971009A2103 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C854735019219971009A2103 /* TicTacToeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TicTacToeTests-Info.plist"; sourceTree = "<group>"; };
 		C854735219219971009A2103 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C854736219219B0B009A2103 /* CPUPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPUPlayer.h; sourceTree = "<group>"; };
-		C854736319219B0B009A2103 /* CPUPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPUPlayer.m; sourceTree = "<group>"; };
-		C858DF4B193BEE7D003EE534 /* GameMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMaster.h; sourceTree = "<group>"; };
-		C858DF4C193BEE7D003EE534 /* GameMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMaster.m; sourceTree = "<group>"; };
-		C858DF4E193BF337003EE534 /* HumanPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HumanPlayer.h; sourceTree = "<group>"; };
-		C858DF4F193BF337003EE534 /* HumanPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HumanPlayer.m; sourceTree = "<group>"; };
-		C858DF51193BFBD8003EE534 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		C858DF52193BFBD8003EE534 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
-		C87DB16319219B7600B486F7 /* TicTacToeGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicTacToeGame.h; sourceTree = "<group>"; };
-		C87DB16419219B7600B486F7 /* TicTacToeGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicTacToeGame.m; sourceTree = "<group>"; };
+		C854736219219B0B009A2103 /* TTTCPUPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTCPUPlayer.h; sourceTree = "<group>"; };
+		C854736319219B0B009A2103 /* TTTCPUPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTCPUPlayer.m; sourceTree = "<group>"; };
+		C858DF4B193BEE7D003EE534 /* TTTGameMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTGameMaster.h; sourceTree = "<group>"; };
+		C858DF4C193BEE7D003EE534 /* TTTGameMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTGameMaster.m; sourceTree = "<group>"; };
+		C858DF4E193BF337003EE534 /* TTTHumanPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTHumanPlayer.h; sourceTree = "<group>"; };
+		C858DF4F193BF337003EE534 /* TTTHumanPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTHumanPlayer.m; sourceTree = "<group>"; };
+		C858DF51193BFBD8003EE534 /* TTTConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTConstants.h; sourceTree = "<group>"; };
+		C858DF52193BFBD8003EE534 /* TTTConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTConstants.m; sourceTree = "<group>"; };
+		C87DB16319219B7600B486F7 /* TTTGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTGame.h; sourceTree = "<group>"; };
+		C87DB16419219B7600B486F7 /* TTTGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,18 +130,18 @@
 			isa = PBXGroup;
 			children = (
 				C854733B19219970009A2103 /* Main.storyboard */,
-				C854733E19219970009A2103 /* TicTacToeViewController.h */,
-				C854733F19219970009A2103 /* TicTacToeViewController.m */,
-				C858DF4B193BEE7D003EE534 /* GameMaster.h */,
-				C858DF4C193BEE7D003EE534 /* GameMaster.m */,
-				C87DB16319219B7600B486F7 /* TicTacToeGame.h */,
-				C87DB16419219B7600B486F7 /* TicTacToeGame.m */,
-				C854736219219B0B009A2103 /* CPUPlayer.h */,
-				C854736319219B0B009A2103 /* CPUPlayer.m */,
-				C858DF4E193BF337003EE534 /* HumanPlayer.h */,
-				C858DF4F193BF337003EE534 /* HumanPlayer.m */,
-				C858DF51193BFBD8003EE534 /* Constants.h */,
-				C858DF52193BFBD8003EE534 /* Constants.m */,
+				C854733E19219970009A2103 /* TTTViewController.h */,
+				C854733F19219970009A2103 /* TTTViewController.m */,
+				C858DF4B193BEE7D003EE534 /* TTTGameMaster.h */,
+				C858DF4C193BEE7D003EE534 /* TTTGameMaster.m */,
+				C87DB16319219B7600B486F7 /* TTTGame.h */,
+				C87DB16419219B7600B486F7 /* TTTGame.m */,
+				C854736219219B0B009A2103 /* TTTCPUPlayer.h */,
+				C854736319219B0B009A2103 /* TTTCPUPlayer.m */,
+				C858DF4E193BF337003EE534 /* TTTHumanPlayer.h */,
+				C858DF4F193BF337003EE534 /* TTTHumanPlayer.m */,
+				C858DF51193BFBD8003EE534 /* TTTConstants.h */,
+				C858DF52193BFBD8003EE534 /* TTTConstants.m */,
 				C854734119219970009A2103 /* Images.xcassets */,
 				C854733019219970009A2103 /* Supporting Files */,
 			);
@@ -165,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				C84E1A76193D62E900660AAC /* CPUPlayerTests.m */,
-				C84E1A78193D635200660AAC /* TicTacToeGameTests.m */,
+				C84E1A78193D635200660AAC /* GameTests.m */,
 				C854734F19219971009A2103 /* Supporting Files */,
 			);
 			path = TicTacToeTests;
@@ -279,13 +279,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C854733619219970009A2103 /* main.m in Sources */,
-				C854736419219B0B009A2103 /* CPUPlayer.m in Sources */,
-				C87DB16519219B7600B486F7 /* TicTacToeGame.m in Sources */,
-				C858DF53193BFBD8003EE534 /* Constants.m in Sources */,
+				C854736419219B0B009A2103 /* TTTCPUPlayer.m in Sources */,
+				C87DB16519219B7600B486F7 /* TTTGame.m in Sources */,
+				C858DF53193BFBD8003EE534 /* TTTConstants.m in Sources */,
 				C854733A19219970009A2103 /* TicTacToeAppDelegate.m in Sources */,
-				C854734019219970009A2103 /* TicTacToeViewController.m in Sources */,
-				C858DF4D193BEE7D003EE534 /* GameMaster.m in Sources */,
-				C858DF50193BF337003EE534 /* HumanPlayer.m in Sources */,
+				C854734019219970009A2103 /* TTTViewController.m in Sources */,
+				C858DF4D193BEE7D003EE534 /* TTTGameMaster.m in Sources */,
+				C858DF50193BF337003EE534 /* TTTHumanPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C84E1A79193D635200660AAC /* TicTacToeGameTests.m in Sources */,
+				C84E1A79193D635200660AAC /* GameTests.m in Sources */,
 				C84E1A77193D62E900660AAC /* CPUPlayerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

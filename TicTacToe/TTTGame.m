@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 David Torre. All rights reserved.
 //
 
-#import "TicTacToeGame.h"
-#import "Constants.h"
+#import "TTTGame.h"
+#import "TTTConstants.h"
 
-@implementation TicTacToeGame
+@implementation TTTGame
 
 - (id)initWithRows:(int)rows columns:(int)columns
 {

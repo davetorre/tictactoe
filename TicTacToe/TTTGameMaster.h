@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TicTacToeGame.h"
+#import "TTTGame.h"
 
-@interface GameMaster : NSObject
+@interface TTTGameMaster : NSObject
 
-- (BOOL)requestMoveInGame:(TicTacToeGame *)game atLocation:(CGPoint)location;
+- (BOOL)requestMoveInGame:(TTTGame *)game atLocation:(CGPoint)location;
 
 @end
